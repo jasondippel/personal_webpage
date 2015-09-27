@@ -1,0 +1,15 @@
+/* CSS for the sticky nav bar at the top of the window
+ */
+
+.static-nav {
+	z-index: 1001;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	background-color: #2883BF;
+	padding: 0em 10%;
+}
+
+.static-nav.hide {
+	display: none;
+}

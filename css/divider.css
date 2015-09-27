@@ -1,0 +1,199 @@
+*,
+*:after,
+*::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* General styles and layout */
+
+body {
+	color: #fff;
+	font-family: 'Lato', Arial, sans-serif;
+}
+body.homepage {
+	background: #2883BF;
+}
+
+.container {
+	overflow: hidden;
+	/* we don't want the pseudo-elements sticking out */
+}
+
+.container svg {
+	display: block;
+}
+
+hr.spacey {
+	margin: 5em 0em;
+}
+
+section {
+	position: relative;
+	padding: 4em 10%;
+	color: #fff;
+	text-align: left;
+}
+
+section.skinny {
+	padding: 0.5em 10%;
+}
+
+section.super-skinny {
+	padding: 0em 10%;
+}
+
+section.skinny-bottom {
+	padding: 2em 10%;
+	padding-bottom: 0.5em;
+}
+
+section.lower-shadow {
+	-webkit-box-shadow: 0px 5px 25px -4px rgba(0,0,0,0.45);
+	-moz-box-shadow: 0px 5px 25px -4px rgba(0,0,0,0.45);
+	box-shadow: 0px 5px 25px -4px rgba(0,0,0,0.45);
+}
+
+.center {
+	text-align: center;
+}
+
+section h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 2.8em;
+	font-weight: 400;
+}
+
+section.grey {
+	background-color: #2f3238;
+}
+section.white {
+	background-color: #ffffff;
+}
+
+section p {
+	/*color: rgba(0,0,0,.3);*/
+	font-size: 1.3em;
+	line-height: 1.5;
+}
+
+/*** Individual section styles and separators ***/
+
+/* Common style for pseudo-elements */
+section::before,
+section::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+
+.ss-style-semiwhitebar {
+	border-top: 1px solid #fff;
+}
+
+/* Triangles */
+.ss-style-triangles::before,
+.ss-style-triangles::after {
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.ss-style-triangles::before {
+	top: -50px;
+	background: #2883BF;
+}
+
+.ss-style-triangles::after {
+	bottom: -50px;
+	z-index: 10;
+	background: inherit;
+}
+
+/* Double Diagonal line */
+
+.ss-style-doublediagonal {
+	z-index: 1;
+	padding-top: 4em;
+	background: #2883BF;
+}
+
+.ss-style-doublediagonal::before,
+.ss-style-doublediagonal::after {
+	top: 0;
+	left: -25%;
+	z-index: -1;
+	width: 150%;
+	height: 75%;
+	background: inherit;
+	-webkit-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.ss-style-doublediagonal::before {
+	height: 50%;
+	background: #116094;
+	-webkit-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+	-webkit-transform-origin: 3% 0;
+	transform-origin: 3% 0;
+}
+
+/* Half Circle */
+.ss-style-halfcircle::before,
+.ss-style-halfcircle::after {
+	left: 50%;
+	z-index: 10;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: inherit;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.ss-style-halfcircle::before {
+	top: -50px;
+	background: #2883BF;
+}
+
+.ss-style-halfcircle::after {
+	bottom: -50px;
+}
+
+/* Media Queries for the layout */
+@media screen and (max-width: 68em) {
+	section {
+		font-size: 80%;
+	}
+}
+
+@media screen and (max-width: 54em) {
+	.column {
+		display: block;
+		width: 100% !important;
+	}
+
+	.text:first-child,
+	.text:nth-child(2) {
+		text-align: center;
+	}
+
+	.icon {
+		margin: 0 auto;
+	}
+
+	.col-2 .column:first-child .icon {
+		margin: 0 auto 50px;
+	}
+
+	.col-2 .column:nth-child(2) .icon {
+		margin: 50px auto 0;
+	}
+}
