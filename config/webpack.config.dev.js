@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
 
 const baseWebpackConfig = require('./webpack.config')
@@ -38,8 +37,4 @@ module.exports = Object.assign({}, baseWebpackConfig, {
       canPrint: true,
     }),
   ],
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-  },
 })
