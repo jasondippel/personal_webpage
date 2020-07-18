@@ -1,2 +1,3 @@
-# My Personal Webpage
-A webpage designed and developed by me so that I can showcase my work and experience. Also a playground for new things.
+## Noted Base
+
+This code repository was created for the [AWS for Front-End Engineers (ft. S3, Cloudfront & Route 53) Course](https://frontendmasters.com/courses/aws-frontend-react/) for Frontend Masters.
