@@ -1,13 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:weight@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cairo:weight@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
 
 $font: 'Karla', sans-serif;
 $font-size-body: 1em;
-$primary-color: white;
-$background-color: darkblue;
+$primary-color: #f1eee4;
+$background-color: #01202c;
 
 html,
 body {
-  height: 100%;
+  max-height: 100vh;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
 }
 
 body {
@@ -16,11 +24,11 @@ body {
   background-color: $background-color;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
-  pre {
-    font-weight: bold;
-    font-size: $font-size-body;
-  }
+.logo {
+  width: 10em;
 }
