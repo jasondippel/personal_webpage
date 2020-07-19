@@ -11,6 +11,7 @@ before_deploy:
   - yarn global add travis-ci-cloudfront-invalidation
   - yarn build:production
 deploy:
+  # deploy built files
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
@@ -19,6 +20,7 @@ deploy:
     local-dir: dist
     on:
       branch: master
+  # deploy public directory
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
